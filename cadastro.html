@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro - ONG Esperança</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Cadastro de Colaborador</h1>
+
+        <nav aria-label="Navegação principal">
+            <a href="index.html">Início</a>
+            <a href="projetos.html">Projetos</a>
+            <a href="cadastro.html">Cadastre-se</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section>
+
+            <h2>Faça parte da ONG</h2>
+
+            <p>
+                Preencha o formulário abaixo para demonstrar seu
+                interesse em colaborar com nossos projetos.
+            </p>
+
+            <form action="#" method="post">
+
+                <!-- DADOS PESSOAIS -->
+
+                <fieldset>
+
+                    <legend>Dados pessoais</legend>
+
+                    <label for="nome">
+                        Nome completo:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        required
+                        minlength="3"
+                        autocomplete="name"
+                    >
+
+                    <label for="email">
+                        E-mail:
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        autocomplete="email"
+                    >
+
+                    <label for="nascimento">
+                        Data de nascimento:
+                    </label>
+
+                    <input
+                        type="date"
+                        id="nascimento"
+                        name="nascimento"
+                        required
+                    >
+
+                    <label for="cpf">
+                        CPF:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cpf"
+                        name="cpf"
+                        placeholder="000.000.000-00"
+                        pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                        maxlength="14"
+                        required
+                        inputmode="numeric"
+                        autocomplete="off"
+                        oninput="mascaraCPF(this)"
+                    >
+
+                </fieldset>
+
+
+                <!-- ENDEREÇO -->
+
+                <fieldset>
+
+                    <legend>Endereço</legend>
+
+                    <label for="cep">
+                        CEP:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cep"
+                        name="cep"
+                        placeholder="00000-000"
+                        pattern="[0-9]{5}-[0-9]{3}"
+                        maxlength="9"
+                        required
+                        inputmode="numeric"
+                        oninput="mascaraCEP(this)"
+                    >
+
+                    <label for="endereco">
+                        Endereço:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="endereco"
+                        name="endereco"
+                        required
+                        autocomplete="street-address"
+                    >
+
+                    <label for="cidade">
+                        Cidade:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cidade"
+                        name="cidade"
+                        required
+                        autocomplete="address-level2"
+                    >
+
+                    <label for="estado">
+                        Estado:
+                    </label>
+
+                    <select
+                        id="estado"
+                        name="estado"
+                        required
+                    >
+                        <option value="">Selecione</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="PR">Paraná</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+
+                </fieldset>
+
+
+                <!-- CONTATO E PARTICIPAÇÃO -->
+
+                <fieldset>
+
+                    <legend>Contato e participação</legend>
+
+                    <label for="telefone">
+                        Telefone:
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefone"
+                        name="telefone"
+                        placeholder="(00) 00000-0000"
+                        pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
+                        maxlength="15"
+                        required
+                        inputmode="tel"
+                        autocomplete="tel"
+                        oninput="mascaraTelefone(this)"
+                    >
+
+                    <label for="interesse">
+                        Área de interesse:
+                    </label>
+
+                    <select
+                        id="interesse"
+                        name="interesse"
+                        required
+                    >
+                        <option value="">
+                            Selecione uma opção
+                        </option>
+
+                        <option value="voluntariado">
+                            Trabalho voluntário
+                        </option>
+
+                        <option value="doacao">
+                            Doação
+                        </option>
+
+                        <option value="ambos">
+                            Doação e voluntariado
+                        </option>
+                    </select>
+
+                </fieldset>
+
+
+                <button type="submit">
+                    Enviar cadastro
+                </button>
+
+                <button type="reset">
+                    Limpar
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+            &copy; 2026 ONG Esperança
+        </p>
+
+        <p>
+            contato@ongesperanca.org
+        </p>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
